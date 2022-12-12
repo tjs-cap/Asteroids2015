@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>Asteroids 2015</title>
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+        <meta http-equiv="cleartype" content="on">
+
+        <meta name="robots" content="noindex,nofollow" />
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script type="text/javascript">
+            if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match('Android'))) {
+                if (document.cookie.indexOf("iphone_redirect=false") == -1) window.location = "not-compatible.html";
+            }
+        </script>
+
+        <script language="JavaScript1.2">
+            top.window.moveTo(0,0);
+            if (document.all) {
+                top.window.resizeTo(screen.availWidth,screen.availHeight);
+            }
+            else if (document.layers||document.getElementById) {
+                if (top.window.outerHeight<screen.availHeight||top.window.outerWidth<screen.availWidth){
+                    top.window.outerHeight = screen.availHeight;
+                    top.window.outerWidth = screen.availWidth;
+                }
+            }
+        </script>
+        
+    </head>
+    <body>
+        
+        <main id="game"></main>
+        <script src="js/vendor/jquery-2.1.3.min.js"></script>
+        <script src="js/vendor/phaser.min.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/Boot.js"></script>
+        <script src="js/Preloader.js"></script>
+        <script src="js/MainMenu.js"></script>
+        <script src="js/Game.js"></script>
+        <script src='js/Entities/Ship.js'></script>
+        <script type="text/javascript">
+            
+
+        (function () {
+
+
+            var game = new Phaser.Game("100%", "100%", Phaser.AUTO, 'game');
+
+
+            //  Add & start the boot state.
+            game.state.add('Boot', BasicGame.Boot);
+            game.state.start('Boot');
+
+        })();
+        </script>
+        
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-61456337-2');ga('send','pageview');
+        </script>
+    </body>
+</html>
